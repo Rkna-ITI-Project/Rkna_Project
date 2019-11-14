@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="121ac68fdf09471d80338a451d53d69c" Name="Diagram1">
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="1.125" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.Area_Table" Width="1.5" PointX="6" PointY="7.125" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.AspNetRole" Width="1.5" PointX="5.75" PointY="4.125" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.AspNetUserClaim" Width="1.5" PointX="3" PointY="11.125" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.AspNetUserLogin" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.AspNetUserRole" Width="1.5" PointX="3" PointY="16.75" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.AspNetUser" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.Car_Specifications_Table" Width="1.5" PointX="3" PointY="13.875" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.Company_Table" Width="1.5" PointX="2.75" PointY="7.125" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.Customer_Slut_Table" Width="1.5" PointX="10.5" PointY="9.75" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.Governorate_Table" Width="1.5" PointX="1.5" PointY="1" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.Slut_Table" Width="1.5" PointX="8.25" PointY="7.625" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.States_Table" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Rkna_DataBaseModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.125" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers1" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Area_Table_States_Table" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Slut_Table_Area_Table" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Car_Specifications_Table_AspNetUsers" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Customer_Slut_Table_AspNetUsers" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Customer_Slut_Table_Car_Specifications_Table" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_Customer_Slut_Table_Slut_Table" />
+        <AssociationConnector Association="Rkna_DataBaseModel.FK_States_Table_Governorate_Table" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Rkna_DataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Area_Table">
+          <Key>
+            <PropertyRef Name="Area_ID" />
+          </Key>
+          <Property Name="Area_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="States_ID" Type="int" Nullable="false" />
+          <Property Name="Area_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Area_Desc" Type="text" />
+          <Property Name="Area_X_Point" Type="varchar" MaxLength="70" />
+          <Property Name="Area_Y_Point" Type="varchar" MaxLength="70" />
+          <Property Name="Area_Manger" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Area_Hour_Rate" Type="money" Nullable="false" />
+          <Property Name="Area_Start_Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Area_End_Time" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Car_Specifications_Table">
+          <Key>
+            <PropertyRef Name="Car_Spe_ID" />
+          </Key>
+          <Property Name="Car_Spe_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Car_Owner_ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Care_Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Car_plate_Number" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company_Table">
+          <Key>
+            <PropertyRef Name="Company_Info_ID" />
+          </Key>
+          <Property Name="Company_Info_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Company_Desc" Type="nvarchar(max)" />
+          <Property Name="Com_Pnone1" Type="char" MaxLength="11" />
+          <Property Name="Com_Pnone2" Type="char" MaxLength="11" />
+          <Property Name="Com_Pnone3" Type="char" MaxLength="11" />
+          <Property Name="Comp_Manger" Type="nvarchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="Customer_Slut_Table">
+          <Key>
+            <PropertyRef Name="Customer_Slut_ID" />
+          </Key>
+          <Property Name="Customer_Slut_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Slut_ID" Type="int" Nullable="false" />
+          <Property Name="Car_Spe_ID" Type="int" Nullable="false" />
+          <Property Name="Cus_Slut_Date" Type="date" Nullable="false" />
+          <Property Name="Cus_Slut_S_Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Cus_Slut_E_Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Cheeck_Code" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Governorate_Table">
+          <Key>
+            <PropertyRef Name="Gov_ID" />
+          </Key>
+          <Property Name="Gov_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gov_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Gov_Desc" Type="text" />
+          <Property Name="Gov_X_Point" Type="varchar" MaxLength="70" />
+          <Property Name="Gov_Y_Point" Type="varchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="Slut_Table">
+          <Key>
+            <PropertyRef Name="Slut_ID" />
+          </Key>
+          <Property Name="Slut_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Area_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Slut_Level" Type="int" />
+          <Property Name="Slut_X_Point" Type="varchar" MaxLength="70" />
+          <Property Name="Slut_Y_Point" Type="varchar" MaxLength="70" />
+          <Property Name="Slut_State" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="States_Table">
+          <Key>
+            <PropertyRef Name="States_ID" />
+          </Key>
+          <Property Name="States_ID" Type="int" Nullable="false" />
+          <Property Name="Gov_ID" Type="int" Nullable="false" />
+          <Property Name="States_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="States_Desc" Type="text" />
+          <Property Name="States_X_Point" Type="varchar" MaxLength="70" />
+          <Property Name="States_Y_Point" Type="varchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Area_Table_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="Area_Manger" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Area_Table_AspNetUsers1">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="Area_Manger" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Area_Table_States_Table">
+          <End Role="States_Table" Type="Self.States_Table" Multiplicity="1" />
+          <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States_Table">
+              <PropertyRef Name="States_ID" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="States_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Car_Specifications_Table_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Car_Specifications_Table" Type="Self.Car_Specifications_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Car_Specifications_Table">
+              <PropertyRef Name="Car_Owner_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Slut_Table_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Customer_Slut_Table" Type="Self.Customer_Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer_Slut_Table">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Slut_Table_Car_Specifications_Table">
+          <End Role="Car_Specifications_Table" Type="Self.Car_Specifications_Table" Multiplicity="1" />
+          <End Role="Customer_Slut_Table" Type="Self.Customer_Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car_Specifications_Table">
+              <PropertyRef Name="Car_Spe_ID" />
+            </Principal>
+            <Dependent Role="Customer_Slut_Table">
+              <PropertyRef Name="Car_Spe_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Slut_Table_Slut_Table">
+          <End Role="Slut_Table" Type="Self.Slut_Table" Multiplicity="1" />
+          <End Role="Customer_Slut_Table" Type="Self.Customer_Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Slut_Table">
+              <PropertyRef Name="Slut_ID" />
+            </Principal>
+            <Dependent Role="Customer_Slut_Table">
+              <PropertyRef Name="Slut_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Slut_Table_Area_Table">
+          <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="1" />
+          <End Role="Slut_Table" Type="Self.Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area_Table">
+              <PropertyRef Name="Area_ID" />
+            </Principal>
+            <Dependent Role="Slut_Table">
+              <PropertyRef Name="Area_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_States_Table_Governorate_Table">
+          <End Role="Governorate_Table" Type="Self.Governorate_Table" Multiplicity="1" />
+          <End Role="States_Table" Type="Self.States_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Governorate_Table">
+              <PropertyRef Name="Gov_ID" />
+            </Principal>
+            <Dependent Role="States_Table">
+              <PropertyRef Name="Gov_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Rkna_DataBaseModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area_Table" EntityType="Self.Area_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Car_Specifications_Table" EntityType="Self.Car_Specifications_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company_Table" EntityType="Self.Company_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_Slut_Table" EntityType="Self.Customer_Slut_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Governorate_Table" EntityType="Self.Governorate_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slut_Table" EntityType="Self.Slut_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States_Table" EntityType="Self.States_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Area_Table_AspNetUsers" Association="Self.FK_Area_Table_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Area_Table_AspNetUsers1" Association="Self.FK_Area_Table_AspNetUsers1">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Area_Table_States_Table" Association="Self.FK_Area_Table_States_Table">
+            <End Role="States_Table" EntitySet="States_Table" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Car_Specifications_Table_AspNetUsers" Association="Self.FK_Car_Specifications_Table_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Car_Specifications_Table" EntitySet="Car_Specifications_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Slut_Table_AspNetUsers" Association="Self.FK_Customer_Slut_Table_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Customer_Slut_Table" EntitySet="Customer_Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Slut_Table_Car_Specifications_Table" Association="Self.FK_Customer_Slut_Table_Car_Specifications_Table">
+            <End Role="Car_Specifications_Table" EntitySet="Car_Specifications_Table" />
+            <End Role="Customer_Slut_Table" EntitySet="Customer_Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Slut_Table_Slut_Table" Association="Self.FK_Customer_Slut_Table_Slut_Table">
+            <End Role="Slut_Table" EntitySet="Slut_Table" />
+            <End Role="Customer_Slut_Table" EntitySet="Customer_Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Slut_Table_Area_Table" Association="Self.FK_Slut_Table_Area_Table">
+            <End Role="Area_Table" EntitySet="Area_Table" />
+            <End Role="Slut_Table" EntitySet="Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_States_Table_Governorate_Table" Association="Self.FK_States_Table_Governorate_Table">
+            <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+            <End Role="States_Table" EntitySet="States_Table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Rkna_DataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Rkna_DataBaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Rkna_DataBaseModel.C__MigrationHistory" />
+          <EntitySet Name="Area_Table" EntityType="Rkna_DataBaseModel.Area_Table" />
+          <EntitySet Name="AspNetRoles" EntityType="Rkna_DataBaseModel.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Rkna_DataBaseModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Rkna_DataBaseModel.AspNetUserLogin" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Rkna_DataBaseModel.AspNetUserRole" />
+          <EntitySet Name="AspNetUsers" EntityType="Rkna_DataBaseModel.AspNetUser" />
+          <EntitySet Name="Car_Specifications_Table" EntityType="Rkna_DataBaseModel.Car_Specifications_Table" />
+          <EntitySet Name="Company_Table" EntityType="Rkna_DataBaseModel.Company_Table" />
+          <EntitySet Name="Customer_Slut_Table" EntityType="Rkna_DataBaseModel.Customer_Slut_Table" />
+          <EntitySet Name="Governorate_Table" EntityType="Rkna_DataBaseModel.Governorate_Table" />
+          <EntitySet Name="Slut_Table" EntityType="Rkna_DataBaseModel.Slut_Table" />
+          <EntitySet Name="States_Table" EntityType="Rkna_DataBaseModel.States_Table" />
+          <EntitySet Name="sysdiagrams" EntityType="Rkna_DataBaseModel.sysdiagram" />
+          <AssociationSet Name="FK_Area_Table_AspNetUsers" Association="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Area_Table_AspNetUsers1" Association="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers1">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Area_Table_States_Table" Association="Rkna_DataBaseModel.FK_Area_Table_States_Table">
+            <End Role="States_Table" EntitySet="States_Table" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Slut_Table_Area_Table" Association="Rkna_DataBaseModel.FK_Slut_Table_Area_Table">
+            <End Role="Area_Table" EntitySet="Area_Table" />
+            <End Role="Slut_Table" EntitySet="Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Rkna_DataBaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Rkna_DataBaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Rkna_DataBaseModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRole" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Car_Specifications_Table_AspNetUsers" Association="Rkna_DataBaseModel.FK_Car_Specifications_Table_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Car_Specifications_Table" EntitySet="Car_Specifications_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Slut_Table_AspNetUsers" Association="Rkna_DataBaseModel.FK_Customer_Slut_Table_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Customer_Slut_Table" EntitySet="Customer_Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Slut_Table_Car_Specifications_Table" Association="Rkna_DataBaseModel.FK_Customer_Slut_Table_Car_Specifications_Table">
+            <End Role="Car_Specifications_Table" EntitySet="Car_Specifications_Table" />
+            <End Role="Customer_Slut_Table" EntitySet="Customer_Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Slut_Table_Slut_Table" Association="Rkna_DataBaseModel.FK_Customer_Slut_Table_Slut_Table">
+            <End Role="Slut_Table" EntitySet="Slut_Table" />
+            <End Role="Customer_Slut_Table" EntitySet="Customer_Slut_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_States_Table_Governorate_Table" Association="Rkna_DataBaseModel.FK_States_Table_Governorate_Table">
+            <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+            <End Role="States_Table" EntitySet="States_Table" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Area_Table">
+          <Key>
+            <PropertyRef Name="Area_ID" />
+          </Key>
+          <Property Name="Area_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="States_ID" Type="Int32" Nullable="false" />
+          <Property Name="Area_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Area_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Area_X_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Area_Y_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Area_Manger" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Area_Hour_Rate" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Area_Start_Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Area_End_Time" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="AspNetUser" Relationship="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers" FromRole="Area_Table" ToRole="AspNetUser" />
+          <NavigationProperty Name="AspNetUser1" Relationship="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers1" FromRole="Area_Table" ToRole="AspNetUser" />
+          <NavigationProperty Name="States_Table" Relationship="Rkna_DataBaseModel.FK_Area_Table_States_Table" FromRole="Area_Table" ToRole="States_Table" />
+          <NavigationProperty Name="Slut_Table" Relationship="Rkna_DataBaseModel.FK_Slut_Table_Area_Table" FromRole="Area_Table" ToRole="Slut_Table" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Rkna_DataBaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Rkna_DataBaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Rkna_DataBaseModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUserRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Area_Table" Relationship="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers" FromRole="AspNetUser" ToRole="Area_Table" />
+          <NavigationProperty Name="Area_Table1" Relationship="Rkna_DataBaseModel.FK_Area_Table_AspNetUsers1" FromRole="AspNetUser" ToRole="Area_Table" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Rkna_DataBaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Rkna_DataBaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="AspNetUserRoles" Relationship="Rkna_DataBaseModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserRole" />
+          <NavigationProperty Name="Car_Specifications_Table" Relationship="Rkna_DataBaseModel.FK_Car_Specifications_Table_AspNetUsers" FromRole="AspNetUser" ToRole="Car_Specifications_Table" />
+          <NavigationProperty Name="Customer_Slut_Table" Relationship="Rkna_DataBaseModel.FK_Customer_Slut_Table_AspNetUsers" FromRole="AspNetUser" ToRole="Customer_Slut_Table" />
+        </EntityType>
+        <EntityType Name="Car_Specifications_Table">
+          <Key>
+            <PropertyRef Name="Car_Spe_ID" />
+          </Key>
+          <Property Name="Car_Spe_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Car_Owner_ID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Care_Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Car_plate_Number" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Rkna_DataBaseModel.FK_Car_Specifications_Table_AspNetUsers" FromRole="Car_Specifications_Table" ToRole="AspNetUser" />
+          <NavigationProperty Name="Customer_Slut_Table" Relationship="Rkna_DataBaseModel.FK_Customer_Slut_Table_Car_Specifications_Table" FromRole="Car_Specifications_Table" ToRole="Customer_Slut_Table" />
+        </EntityType>
+        <EntityType Name="Company_Table">
+          <Key>
+            <PropertyRef Name="Company_Info_ID" />
+          </Key>
+          <Property Name="Company_Info_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Company_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Com_Pnone1" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Com_Pnone2" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Com_Pnone3" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Comp_Manger" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer_Slut_Table">
+          <Key>
+            <PropertyRef Name="Customer_Slut_ID" />
+          </Key>
+          <Property Name="Customer_Slut_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_ID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Slut_ID" Type="Int32" Nullable="false" />
+          <Property Name="Car_Spe_ID" Type="Int32" Nullable="false" />
+          <Property Name="Cus_Slut_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cus_Slut_S_Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Cus_Slut_E_Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Cheeck_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Rkna_DataBaseModel.FK_Customer_Slut_Table_AspNetUsers" FromRole="Customer_Slut_Table" ToRole="AspNetUser" />
+          <NavigationProperty Name="Car_Specifications_Table" Relationship="Rkna_DataBaseModel.FK_Customer_Slut_Table_Car_Specifications_Table" FromRole="Customer_Slut_Table" ToRole="Car_Specifications_Table" />
+          <NavigationProperty Name="Slut_Table" Relationship="Rkna_DataBaseModel.FK_Customer_Slut_Table_Slut_Table" FromRole="Customer_Slut_Table" ToRole="Slut_Table" />
+        </EntityType>
+        <EntityType Name="Governorate_Table">
+          <Key>
+            <PropertyRef Name="Gov_ID" />
+          </Key>
+          <Property Name="Gov_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gov_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Gov_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Gov_X_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Gov_Y_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="States_Table" Relationship="Rkna_DataBaseModel.FK_States_Table_Governorate_Table" FromRole="Governorate_Table" ToRole="States_Table" />
+        </EntityType>
+        <EntityType Name="Slut_Table">
+          <Key>
+            <PropertyRef Name="Slut_ID" />
+          </Key>
+          <Property Name="Slut_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Area_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Slut_Level" Type="Int32" />
+          <Property Name="Slut_X_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Slut_Y_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Slut_State" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Area_Table" Relationship="Rkna_DataBaseModel.FK_Slut_Table_Area_Table" FromRole="Slut_Table" ToRole="Area_Table" />
+          <NavigationProperty Name="Customer_Slut_Table" Relationship="Rkna_DataBaseModel.FK_Customer_Slut_Table_Slut_Table" FromRole="Slut_Table" ToRole="Customer_Slut_Table" />
+        </EntityType>
+        <EntityType Name="States_Table">
+          <Key>
+            <PropertyRef Name="States_ID" />
+          </Key>
+          <Property Name="States_ID" Type="Int32" Nullable="false" />
+          <Property Name="Gov_ID" Type="Int32" Nullable="false" />
+          <Property Name="States_Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="States_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="States_X_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="States_Y_Point" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Area_Table" Relationship="Rkna_DataBaseModel.FK_Area_Table_States_Table" FromRole="States_Table" ToRole="Area_Table" />
+          <NavigationProperty Name="Governorate_Table" Relationship="Rkna_DataBaseModel.FK_States_Table_Governorate_Table" FromRole="States_Table" ToRole="Governorate_Table" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Area_Table_AspNetUsers">
+          <End Type="Rkna_DataBaseModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Area_Table" Role="Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="Area_Manger" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Area_Table_AspNetUsers1">
+          <End Type="Rkna_DataBaseModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Area_Table" Role="Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="Area_Manger" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Area_Table_States_Table">
+          <End Type="Rkna_DataBaseModel.States_Table" Role="States_Table" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Area_Table" Role="Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States_Table">
+              <PropertyRef Name="States_ID" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="States_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Slut_Table_Area_Table">
+          <End Type="Rkna_DataBaseModel.Area_Table" Role="Area_Table" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Slut_Table" Role="Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area_Table">
+              <PropertyRef Name="Area_ID" />
+            </Principal>
+            <Dependent Role="Slut_Table">
+              <PropertyRef Name="Area_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="Rkna_DataBaseModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Rkna_DataBaseModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="Rkna_DataBaseModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Rkna_DataBaseModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Type="Rkna_DataBaseModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Rkna_DataBaseModel.AspNetUserRole" Role="AspNetUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Car_Specifications_Table_AspNetUsers">
+          <End Type="Rkna_DataBaseModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Car_Specifications_Table" Role="Car_Specifications_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Car_Specifications_Table">
+              <PropertyRef Name="Car_Owner_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Slut_Table_AspNetUsers">
+          <End Type="Rkna_DataBaseModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Customer_Slut_Table" Role="Customer_Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer_Slut_Table">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Slut_Table_Car_Specifications_Table">
+          <End Type="Rkna_DataBaseModel.Car_Specifications_Table" Role="Car_Specifications_Table" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Customer_Slut_Table" Role="Customer_Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Car_Specifications_Table">
+              <PropertyRef Name="Car_Spe_ID" />
+            </Principal>
+            <Dependent Role="Customer_Slut_Table">
+              <PropertyRef Name="Car_Spe_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Slut_Table_Slut_Table">
+          <End Type="Rkna_DataBaseModel.Slut_Table" Role="Slut_Table" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.Customer_Slut_Table" Role="Customer_Slut_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Slut_Table">
+              <PropertyRef Name="Slut_ID" />
+            </Principal>
+            <Dependent Role="Customer_Slut_Table">
+              <PropertyRef Name="Slut_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_States_Table_Governorate_Table">
+          <End Type="Rkna_DataBaseModel.Governorate_Table" Role="Governorate_Table" Multiplicity="1" />
+          <End Type="Rkna_DataBaseModel.States_Table" Role="States_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Governorate_Table">
+              <PropertyRef Name="Gov_ID" />
+            </Principal>
+            <Dependent Role="States_Table">
+              <PropertyRef Name="Gov_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Rkna_DataBaseModelStoreContainer" CdmEntityContainer="Rkna_DataBaseEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Area_Table">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.Area_Table">
+              <MappingFragment StoreEntitySet="Area_Table">
+                <ScalarProperty Name="Area_End_Time" ColumnName="Area_End_Time" />
+                <ScalarProperty Name="Area_Start_Time" ColumnName="Area_Start_Time" />
+                <ScalarProperty Name="Area_Hour_Rate" ColumnName="Area_Hour_Rate" />
+                <ScalarProperty Name="Area_Manger" ColumnName="Area_Manger" />
+                <ScalarProperty Name="Area_Y_Point" ColumnName="Area_Y_Point" />
+                <ScalarProperty Name="Area_X_Point" ColumnName="Area_X_Point" />
+                <ScalarProperty Name="Area_Desc" ColumnName="Area_Desc" />
+                <ScalarProperty Name="Area_Name" ColumnName="Area_Name" />
+                <ScalarProperty Name="States_ID" ColumnName="States_ID" />
+                <ScalarProperty Name="Area_ID" ColumnName="Area_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserRoles">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.AspNetUserRole">
+              <MappingFragment StoreEntitySet="AspNetUserRoles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Car_Specifications_Table">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.Car_Specifications_Table">
+              <MappingFragment StoreEntitySet="Car_Specifications_Table">
+                <ScalarProperty Name="Car_plate_Number" ColumnName="Car_plate_Number" />
+                <ScalarProperty Name="Care_Model" ColumnName="Care_Model" />
+                <ScalarProperty Name="Car_Owner_ID" ColumnName="Car_Owner_ID" />
+                <ScalarProperty Name="Car_Spe_ID" ColumnName="Car_Spe_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company_Table">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.Company_Table">
+              <MappingFragment StoreEntitySet="Company_Table">
+                <ScalarProperty Name="Comp_Manger" ColumnName="Comp_Manger" />
+                <ScalarProperty Name="Com_Pnone3" ColumnName="Com_Pnone3" />
+                <ScalarProperty Name="Com_Pnone2" ColumnName="Com_Pnone2" />
+                <ScalarProperty Name="Com_Pnone1" ColumnName="Com_Pnone1" />
+                <ScalarProperty Name="Company_Desc" ColumnName="Company_Desc" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+                <ScalarProperty Name="Company_Info_ID" ColumnName="Company_Info_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Slut_Table">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.Customer_Slut_Table">
+              <MappingFragment StoreEntitySet="Customer_Slut_Table">
+                <ScalarProperty Name="Cheeck_Code" ColumnName="Cheeck_Code" />
+                <ScalarProperty Name="Cus_Slut_E_Time" ColumnName="Cus_Slut_E_Time" />
+                <ScalarProperty Name="Cus_Slut_S_Time" ColumnName="Cus_Slut_S_Time" />
+                <ScalarProperty Name="Cus_Slut_Date" ColumnName="Cus_Slut_Date" />
+                <ScalarProperty Name="Car_Spe_ID" ColumnName="Car_Spe_ID" />
+                <ScalarProperty Name="Slut_ID" ColumnName="Slut_ID" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Slut_ID" ColumnName="Customer_Slut_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Governorate_Table">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.Governorate_Table">
+              <MappingFragment StoreEntitySet="Governorate_Table">
+                <ScalarProperty Name="Gov_Y_Point" ColumnName="Gov_Y_Point" />
+                <ScalarProperty Name="Gov_X_Point" ColumnName="Gov_X_Point" />
+                <ScalarProperty Name="Gov_Desc" ColumnName="Gov_Desc" />
+                <ScalarProperty Name="Gov_Name" ColumnName="Gov_Name" />
+                <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slut_Table">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.Slut_Table">
+              <MappingFragment StoreEntitySet="Slut_Table">
+                <ScalarProperty Name="Slut_State" ColumnName="Slut_State" />
+                <ScalarProperty Name="Slut_Y_Point" ColumnName="Slut_Y_Point" />
+                <ScalarProperty Name="Slut_X_Point" ColumnName="Slut_X_Point" />
+                <ScalarProperty Name="Slut_Level" ColumnName="Slut_Level" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Area_ID" ColumnName="Area_ID" />
+                <ScalarProperty Name="Slut_ID" ColumnName="Slut_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States_Table">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.States_Table">
+              <MappingFragment StoreEntitySet="States_Table">
+                <ScalarProperty Name="States_Y_Point" ColumnName="States_Y_Point" />
+                <ScalarProperty Name="States_X_Point" ColumnName="States_X_Point" />
+                <ScalarProperty Name="States_Desc" ColumnName="States_Desc" />
+                <ScalarProperty Name="States_Name" ColumnName="States_Name" />
+                <ScalarProperty Name="Gov_ID" ColumnName="Gov_ID" />
+                <ScalarProperty Name="States_ID" ColumnName="States_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Rkna_DataBaseModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
