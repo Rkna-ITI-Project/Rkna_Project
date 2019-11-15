@@ -189,6 +189,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\Area_TableController.cs" />
+    <Compile Include="Controllers\API\AspNetUsersController.cs" />
+    <Compile Include="Controllers\API\Car_Specifications_TableController.cs" />
+    <Compile Include="Controllers\API\Company_TableController.cs" />
+    <Compile Include="Controllers\API\Customer_Slut_TableController.cs" />
+    <Compile Include="Controllers\API\Governorate_TableController.cs" />
+    <Compile Include="Controllers\API\Slut_TableController.cs" />
+    <Compile Include="Controllers\API\States_TableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
