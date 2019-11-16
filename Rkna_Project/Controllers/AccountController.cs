@@ -13,6 +13,7 @@ using Rkna_Project.Models;
 namespace Rkna_Project.Controllers
 {
     [Authorize]
+    ///this for test
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
