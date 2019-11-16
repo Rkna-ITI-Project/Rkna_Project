@@ -11,7 +11,9 @@ namespace Rkna_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(MetaData.Area_TableMeta))]
     public partial class Area_Table
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -36,5 +38,6 @@ namespace Rkna_Project.Models
         public virtual States_Table States_Table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Slut_Table> Slut_Table { get; set; }
+        //tesgg
     }
 }

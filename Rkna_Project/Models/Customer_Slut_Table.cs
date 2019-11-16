@@ -11,7 +11,8 @@ namespace Rkna_Project.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    [MetadataType(typeof(MetaData.Customer_Slut_TableMeta))]
     public partial class Customer_Slut_Table
     {
         public int Customer_Slut_ID { get; set; }

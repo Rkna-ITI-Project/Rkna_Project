@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -35,7 +35,7 @@ namespace Rkna_Project.Controllers.API
             return Ok(area_Table);
         }
 
-        // PUT: api/Area_Table/5
+        // PUT: api/Area_Table/5 
         [ResponseType(typeof(void))]
         public IHttpActionResult PutArea_Table(int id, Area_Table area_Table)
         {
