@@ -10,6 +10,7 @@ namespace Rkna_Project.Controllers
 {
     public class AreaController : Controller
     {
+        //update
         // GET: Area
         public ActionResult Index()
         {
