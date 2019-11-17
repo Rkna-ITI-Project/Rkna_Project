@@ -38,8 +38,8 @@ namespace Rkna_Project.MetaData
         [Required]
         public bool Slut_State { get; set; }
 
-        public virtual Area_Table Area_Table { get; set; }
+        public  Area_Table Area_Table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer_Slut_Table> Customer_Slut_Table { get; set; }
+        public  ICollection<Customer_Slut_Table> Customer_Slut_Table { get; set; }
     }
 }

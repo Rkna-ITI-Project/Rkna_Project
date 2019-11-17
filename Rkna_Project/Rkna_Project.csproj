@@ -205,9 +205,12 @@
     <Compile Include="Controllers\API\Governorate_TableController.cs" />
     <Compile Include="Controllers\API\Slut_TableController.cs" />
     <Compile Include="Controllers\API\States_TableController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\GovernorateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="DataAccess\Area_TableDAL.cs" />
+    <Compile Include="Controllers\SlutController.cs" />
+    <Compile Include="Controllers\StatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -401,6 +404,22 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Governorate\CreateGovernorator.cshtml" />
+    <Content Include="Views\Governorate\Index.cshtml" />
+    <Content Include="Views\Governorate\UpdateGovernorator.cshtml" />
+    <Content Include="Views\Governorate\deleteGovernorator.cshtml" />
+    <Content Include="Views\States\Index.cshtml" />
+    <Content Include="Views\States\CreateStates.cshtml" />
+    <Content Include="Views\States\UpdateStates.cshtml" />
+    <Content Include="Views\States\deleteStates.cshtml" />
+    <Content Include="Views\Slut\Index.cshtml" />
+    <Content Include="Views\Slut\CreateSlut.cshtml" />
+    <Content Include="Views\Slut\UpdateSlut.cshtml" />
+    <Content Include="Views\Slut\deleteSlut.cshtml" />
+    <Content Include="Views\Area\Index.cshtml" />
+    <Content Include="Views\Area\CreateArea.cshtml" />
+    <Content Include="Views\Area\UpdateArea.cshtml" />
+    <Content Include="Views\Area\deleteArea.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -32,6 +32,6 @@ namespace Rkna_Project.MetaData
         public string Gov_Y_Point { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<States_Table> States_Table { get; set; }
+        public ICollection<States_Table> States_Table { get; set; }
     }
 }

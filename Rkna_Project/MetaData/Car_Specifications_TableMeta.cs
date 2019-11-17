@@ -33,8 +33,8 @@ namespace Rkna_Project.MetaData
         [MaxLength(7, ErrorMessage = "It's Very Long")]
         //[DataType(DataType.)]
         public string Car_plate_Number { get; set; }
-        public virtual AspNetUser AspNetUser { get; set; }
+        public  AspNetUser AspNetUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer_Slut_Table> Customer_Slut_Table { get; set; }
+        public  ICollection<Customer_Slut_Table> Customer_Slut_Table { get; set; }
     }
 }
