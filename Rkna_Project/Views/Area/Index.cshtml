@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Rkna_Project.MetaData.Area_TableMeta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateArea")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_Manger)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_Hour_Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_Start_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area_End_Time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_Manger)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_Hour_Rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_Start_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_End_Time)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

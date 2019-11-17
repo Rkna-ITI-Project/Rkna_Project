@@ -41,8 +41,8 @@ namespace Rkna_Project.MetaData
         public System.TimeSpan Cus_Slut_E_Time { get; set; }
         public string Cheeck_Code { get; set; }
 
-        public virtual AspNetUser AspNetUser { get; set; }
-        public virtual Car_Specifications_Table Car_Specifications_Table { get; set; }
-        public virtual Slut_Table Slut_Table { get; set; }
+        public  AspNetUser AspNetUser { get; set; }
+        public Car_Specifications_Table Car_Specifications_Table { get; set; }
+        public  Slut_Table Slut_Table { get; set; }
     }
 }

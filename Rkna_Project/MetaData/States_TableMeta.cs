@@ -34,7 +34,7 @@ namespace Rkna_Project.MetaData
         public string States_Y_Point { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Area_Table> Area_Table { get; set; }
-        public virtual Governorate_Table Governorate_Table { get; set; }
+        public  ICollection<Area_Table> Area_Table { get; set; }
+        public  Governorate_Table Governorate_Table { get; set; }
     }
 }
