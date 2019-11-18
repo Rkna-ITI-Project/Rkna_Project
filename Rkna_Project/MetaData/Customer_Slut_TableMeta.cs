@@ -9,7 +9,7 @@ namespace Rkna_Project.MetaData
 {
     public class Customer_Slut_TableMeta
     {
-        
+        public int Customer_Slut_ID { get; set; }
         [Required]
         [MinLength(14, ErrorMessage = "you Should Enter 14 Number")]
         [MaxLength(14, ErrorMessage = "you Should Enter 14 Number")]

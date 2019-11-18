@@ -15,12 +15,11 @@ namespace Rkna_Project.MetaData
             this.Slut_Table = new HashSet<Slut_Table>();
         }
 
-        [Required]
-        [MinLength(1)]
+        //[Required]
+        //[MinLength(1)]
         [ScaffoldColumn(false)]
         public int Area_ID { get; set; }
-        [Required]
-        [MinLength(1)]
+        [Required(ErrorMessage ="You must Choose a state")]
         [ScaffoldColumn(false)]
         public int States_ID { get; set; }
         [Required(ErrorMessage = "Name is required")]

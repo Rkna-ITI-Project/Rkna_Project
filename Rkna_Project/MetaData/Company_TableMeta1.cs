@@ -8,7 +8,7 @@ namespace Rkna_Project.MetaData
 {
     public class Company_TableMeta1
     {
-        
+        public int Company_Info_ID { get; set; }
         [Required(ErrorMessage = "Company Name is Required")]
         [MinLength(1, ErrorMessage = "It's Very small Name")]
         [MaxLength(100, ErrorMessage = "It's Very Long Name")]

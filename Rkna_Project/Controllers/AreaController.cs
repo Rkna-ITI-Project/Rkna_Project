@@ -47,6 +47,9 @@ namespace Rkna_Project.Controllers
         [Authorize(Roles = "admin,manger")]
         public ActionResult CreateArea()
         {   ////in this view i do a create view from Governorate_TableMeta class in metadata folder without using context_DB in view 
+            List<States_TableMeta> StateList = new List<States_TableMeta>();
+            SelectList list = new SelectList(StateList, "States_ID", "States_Name");
+            ViewBag.List = list;
             return View();
         }
 
@@ -74,6 +77,9 @@ namespace Rkna_Project.Controllers
         [Authorize(Roles = "admin,manger")]
         public ActionResult UpdateArea(int id)
         {
+            List<States_TableMeta> StateList = new List<States_TableMeta>();
+            SelectList list = new SelectList(StateList, "States_ID", "States_Name");
+            ViewBag.List = list;
             Area_TableMeta Area_TableMeta = null;
 
             using (var client = new HttpClient())

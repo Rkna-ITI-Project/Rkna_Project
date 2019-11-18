@@ -15,7 +15,7 @@ namespace Rkna_Project.MetaData
         {
             this.Customer_Slut_Table = new HashSet<Customer_Slut_Table>();
         }
-      E:\ITI Traning\Final Project\Rkna_Project\Rkna_Project\MetaData\Slut_TableMeta.cs
+      //E:\ITI Traning\Final Project\Rkna_Project\Rkna_Project\MetaData\Slut_TableMeta.cs
         [Required]
         [MinLength(1)]
         [ScaffoldColumn(false)]

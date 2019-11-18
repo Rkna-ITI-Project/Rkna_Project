@@ -25,7 +25,7 @@ namespace Rkna_Project.MetaData
         //[MaxLength(14, ErrorMessage = "you Should Enter 14 Number")]
         ////[ScaffoldColumn(false)]
         //[DataType(DataType.CreditCard,ErrorMessage ="You Must Enter Numbers")]
-        //public string Id { get; set; }
+        public string Id { get; set; }
         [Required(ErrorMessage = "Email is required")]
         [DataType(DataType.EmailAddress)]
         [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email is not valid.")]
