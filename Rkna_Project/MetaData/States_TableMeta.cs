@@ -13,10 +13,7 @@ namespace Rkna_Project.MetaData
         {
             this.Area_Table = new HashSet<Area_Table>();
         }
-        [Required]
-        [MinLength(1)]
-        [ScaffoldColumn(false)]
-        public int States_ID { get; set; }
+      
         [Required]
         [ScaffoldColumn(false)]
         public int Gov_ID { get; set; }

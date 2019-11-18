@@ -15,10 +15,7 @@ namespace Rkna_Project.MetaData
         {
             this.Customer_Slut_Table = new HashSet<Customer_Slut_Table>();
         }
-        [Required]
-        [MinLength(1)]
-        [ScaffoldColumn(false)]
-        public int Slut_ID { get; set; }
+      
         [Required]
         [MinLength(1)]
         [ScaffoldColumn(false)]

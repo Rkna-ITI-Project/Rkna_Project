@@ -52,6 +52,7 @@ namespace Rkna_Project.Controllers
 
         //
         // GET: /Manage/Index
+        [Authorize(Roles = "admin,manger")]
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
@@ -77,6 +78,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/RemoveLogin
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
@@ -101,6 +103,7 @@ namespace Rkna_Project.Controllers
 
         //
         // GET: /Manage/AddPhoneNumber
+        [Authorize(Roles = "admin,manger")]
         public ActionResult AddPhoneNumber()
         {
             return View();
@@ -108,6 +111,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/AddPhoneNumber
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> AddPhoneNumber(AddPhoneNumberViewModel model)
@@ -132,6 +136,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/EnableTwoFactorAuthentication
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> EnableTwoFactorAuthentication()
@@ -147,6 +152,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/DisableTwoFactorAuthentication
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DisableTwoFactorAuthentication()
@@ -162,6 +168,7 @@ namespace Rkna_Project.Controllers
 
         //
         // GET: /Manage/VerifyPhoneNumber
+        [Authorize(Roles = "admin,manger")]
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
         {
             var code = await UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), phoneNumber);
@@ -196,6 +203,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/RemovePhoneNumber
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RemovePhoneNumber()
@@ -215,6 +223,7 @@ namespace Rkna_Project.Controllers
 
         //
         // GET: /Manage/ChangePassword
+        [Authorize(Roles = "admin,manger")]
         public ActionResult ChangePassword()
         {
             return View();
@@ -222,6 +231,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/ChangePassword
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
@@ -246,6 +256,7 @@ namespace Rkna_Project.Controllers
 
         //
         // GET: /Manage/SetPassword
+        [Authorize(Roles = "admin,manger")]
         public ActionResult SetPassword()
         {
             return View();
@@ -253,6 +264,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/SetPassword
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> SetPassword(SetPasswordViewModel model)
@@ -278,6 +290,7 @@ namespace Rkna_Project.Controllers
 
         //
         // GET: /Manage/ManageLogins
+        [Authorize(Roles = "admin,manger")]
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
@@ -301,6 +314,7 @@ namespace Rkna_Project.Controllers
 
         //
         // POST: /Manage/LinkLogin
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LinkLogin(string provider)

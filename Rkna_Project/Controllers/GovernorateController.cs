@@ -12,6 +12,7 @@ namespace Rkna_Project.Controllers
     {
 
         // GET: Governorate
+        [Authorize(Roles = "admin,manger")]
         public ActionResult Index()
         {
             IEnumerable<Governorate_TableMeta> Governorate_TableMeta = null;
@@ -42,10 +43,13 @@ namespace Rkna_Project.Controllers
             }
             return View(Governorate_TableMeta);
         }
+
+        [Authorize(Roles = "admin,manger")]
         public ActionResult CreateGovernorator()
         {   ////in this view i do a create view from Governorate_TableMeta class in metadata folder without using context_DB in view 
             return View();
         }
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult CreateGovernorator(Governorate_TableMeta Governorate_TableMeta)
         {
@@ -60,12 +64,16 @@ namespace Rkna_Project.Controllers
                 {
                     return RedirectToAction("Index");
                 }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+                }
             }
-            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
 
             return View(Governorate_TableMeta);
         }
 
+        [Authorize(Roles = "admin,manger")]
         public ActionResult UpdateGovernorator(int id)
         {
             Governorate_TableMeta Governorate_TableMeta = null;
@@ -88,6 +96,8 @@ namespace Rkna_Project.Controllers
             }
             return View(Governorate_TableMeta);
         }
+
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult UpdateGovernorator(Governorate_TableMeta Governorate_TableMeta)
         {
@@ -110,6 +120,7 @@ namespace Rkna_Project.Controllers
         }
 
 
+        [Authorize(Roles = "admin,manger")]
         public ActionResult deleteGovernorator(int id)
         {
             using (var client = new HttpClient())

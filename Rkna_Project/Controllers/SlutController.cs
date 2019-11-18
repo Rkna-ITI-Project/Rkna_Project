@@ -11,6 +11,7 @@ namespace Rkna_Project.Controllers
     public class SlutController : Controller
     {
         // GET: Slut
+        [Authorize(Roles = "admin,manger")]
         public ActionResult Index()
         {
             IEnumerable<Slut_TableMeta> Slut_TableMeta = null;
@@ -41,10 +42,12 @@ namespace Rkna_Project.Controllers
             }
             return View(Slut_TableMeta);
         }
+        [Authorize(Roles = "admin,manger")]
         public ActionResult CreateSlut()
         {   ////in this view i do a create view from Governorate_TableMeta class in metadata folder without using context_DB in view 
             return View();
         }
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult CreateSlut(Slut_TableMeta Slut_TableMeta)
         {
@@ -65,6 +68,7 @@ namespace Rkna_Project.Controllers
             return View(Slut_TableMeta);
         }
 
+        [Authorize(Roles = "admin,manger")]
         public ActionResult UpdateSlut(int id)
         {
             Slut_TableMeta Slut_TableMeta = null;
@@ -87,6 +91,7 @@ namespace Rkna_Project.Controllers
             }
             return View(Slut_TableMeta);
         }
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult UpdateSlut(Slut_TableMeta Slut_TableMeta)
         {
@@ -109,6 +114,7 @@ namespace Rkna_Project.Controllers
         }
 
 
+        [Authorize(Roles = "admin,manger")]
         public ActionResult deleteSlut(int id)
         {
             using (var client = new HttpClient())

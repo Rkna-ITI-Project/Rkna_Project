@@ -10,8 +10,9 @@ namespace Rkna_Project.Controllers
 {
     public class AreaController : Controller
     {
-        //update
+
         // GET: Area
+        [Authorize(Roles = "admin,manger")]
         public ActionResult Index()
         {
             IEnumerable<Area_TableMeta> Area_TableMeta = null;
@@ -42,10 +43,14 @@ namespace Rkna_Project.Controllers
             }
             return View(Area_TableMeta);
         }
+
+        [Authorize(Roles = "admin,manger")]
         public ActionResult CreateArea()
         {   ////in this view i do a create view from Governorate_TableMeta class in metadata folder without using context_DB in view 
             return View();
         }
+
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult CreateArea(Area_TableMeta Area_TableMeta)
         {
@@ -66,6 +71,7 @@ namespace Rkna_Project.Controllers
             return View(Area_TableMeta);
         }
 
+        [Authorize(Roles = "admin,manger")]
         public ActionResult UpdateArea(int id)
         {
             Area_TableMeta Area_TableMeta = null;
@@ -88,6 +94,8 @@ namespace Rkna_Project.Controllers
             }
             return View(Area_TableMeta);
         }
+
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult UpdateArea(Area_TableMeta Area_TableMeta)
         {
@@ -109,7 +117,7 @@ namespace Rkna_Project.Controllers
             return View(Area_TableMeta);
         }
 
-
+        [Authorize(Roles = "admin,manger")]
         public ActionResult deleteArea(int id)
         {
             using (var client = new HttpClient())

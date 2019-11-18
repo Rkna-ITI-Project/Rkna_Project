@@ -16,10 +16,7 @@ namespace Rkna_Project.MetaData
         }
 
 
-        [Required]
-        [MinLength(1)]
-        [ScaffoldColumn(false)]
-        public int Car_Spe_ID { get; set; }
+        
         [Required(ErrorMessage = "License Id is Required")]
         [MinLength(14, ErrorMessage = "It's Very Small")]
         [MaxLength(14, ErrorMessage = "It's Very Long")]

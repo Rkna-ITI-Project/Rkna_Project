@@ -11,8 +11,7 @@ using Microsoft.Owin.Security;
 using Rkna_Project.Models;
 
 namespace Rkna_Project.Controllers
-{
-    [Authorize]
+{ 
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

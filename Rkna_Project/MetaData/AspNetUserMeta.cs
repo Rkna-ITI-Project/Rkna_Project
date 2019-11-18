@@ -20,12 +20,12 @@ namespace Rkna_Project.MetaData
             this.Car_Specifications_Table = new HashSet<Car_Specifications_Table>();
             this.Customer_Slut_Table = new HashSet<Customer_Slut_Table>();
         }
-        [Required]
-        [MinLength(14,ErrorMessage ="you Should Enter 14 Number")]
-        [MaxLength(14, ErrorMessage = "you Should Enter 14 Number")]
-        //[ScaffoldColumn(false)]
-        [DataType(DataType.CreditCard,ErrorMessage ="You Must Enter Numbers")]
-        public string Id { get; set; }
+        //[Required]
+        //[MinLength(14,ErrorMessage ="you Should Enter 14 Number")]
+        //[MaxLength(14, ErrorMessage = "you Should Enter 14 Number")]
+        ////[ScaffoldColumn(false)]
+        //[DataType(DataType.CreditCard,ErrorMessage ="You Must Enter Numbers")]
+        //public string Id { get; set; }
         [Required(ErrorMessage = "Email is required")]
         [DataType(DataType.EmailAddress)]
         [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email is not valid.")]

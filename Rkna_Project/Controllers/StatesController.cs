@@ -11,6 +11,7 @@ namespace Rkna_Project.Controllers
     public class StatesController : Controller
     {
         // GET: states
+        [Authorize(Roles = "admin,manger")]
         public ActionResult Index()
         {
             IEnumerable<States_TableMeta> States_TableMeta = null;
@@ -41,10 +42,12 @@ namespace Rkna_Project.Controllers
             }
             return View(States_TableMeta);
         }
+        [Authorize(Roles = "admin,manger")]
         public ActionResult CreateStates()
         {   ////in this view i do a create view from Governorate_TableMeta class in metadata folder without using context_DB in view 
             return View();
         }
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult CreateStates(States_TableMeta States_TableMeta)
         {
@@ -65,6 +68,7 @@ namespace Rkna_Project.Controllers
             return View(States_TableMeta);
         }
 
+        [Authorize(Roles = "admin,manger")]
         public ActionResult UpdateStates(int id)
         {
             States_TableMeta States_TableMeta = null;
@@ -87,6 +91,7 @@ namespace Rkna_Project.Controllers
             }
             return View(States_TableMeta);
         }
+        [Authorize(Roles = "admin,manger")]
         [HttpPost]
         public ActionResult UpdateStates(States_TableMeta States_TableMeta)
         {
@@ -109,6 +114,7 @@ namespace Rkna_Project.Controllers
         }
 
 
+        [Authorize(Roles = "admin,manger")]
         public ActionResult deleteStates(int id)
         {
             using (var client = new HttpClient())
