@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 namespace Rkna_Project.MetaData
-{
+{ 
     public class Area_TableMeta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Rkna_Project.MetaData
 {
-    public class AspNetUserMeta
+    public class AspNetUserMeta 
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AspNetUserMeta()

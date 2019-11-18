@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Rkna_Project.MetaData
 {
-    public class Governorate_TableMeta
+    public class Governorate_TableMeta 
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Governorate_TableMeta()

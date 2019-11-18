@@ -40,7 +40,7 @@ namespace Rkna_Project.Controllers
                     ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
                 }
             }
-            return View(Slut_TableMeta);
+            return View(Slut_TableMeta); 
         }
         [Authorize(Roles = "admin,manger")]
         public ActionResult CreateSlut()

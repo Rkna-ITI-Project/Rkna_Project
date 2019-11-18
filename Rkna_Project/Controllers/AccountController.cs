@@ -13,7 +13,7 @@ using Rkna_Project.Models;
 namespace Rkna_Project.Controllers
 { 
     public class AccountController : Controller
-    {
+    { 
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 

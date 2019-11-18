@@ -15,7 +15,7 @@ namespace Rkna_Project.MetaData
             this.Customer_Slut_Table = new HashSet<Customer_Slut_Table>();
         }
 
-
+         
         
         [Required(ErrorMessage = "License Id is Required")]
         [MinLength(14, ErrorMessage = "It's Very Small")]

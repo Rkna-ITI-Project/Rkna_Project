@@ -6,7 +6,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 namespace Rkna_Project.MetaData
 {
-    public class States_TableMeta
+    public class States_TableMeta 
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public States_TableMeta()

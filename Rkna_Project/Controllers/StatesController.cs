@@ -36,7 +36,7 @@ namespace Rkna_Project.Controllers
                     //log response status here..
 
                     States_TableMeta = Enumerable.Empty<States_TableMeta>();
-
+                     
                     ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
                 }
             }

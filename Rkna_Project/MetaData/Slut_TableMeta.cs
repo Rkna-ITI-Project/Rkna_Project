@@ -9,13 +9,13 @@ namespace Rkna_Project.MetaData
 {
     public class Slut_TableMeta
     {
-
+         
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Slut_TableMeta()
         {
             this.Customer_Slut_Table = new HashSet<Customer_Slut_Table>();
         }
-      
+      E:\ITI Traning\Final Project\Rkna_Project\Rkna_Project\MetaData\Slut_TableMeta.cs
         [Required]
         [MinLength(1)]
         [ScaffoldColumn(false)]

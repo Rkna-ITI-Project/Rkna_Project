@@ -61,7 +61,7 @@ namespace Rkna_Project.Controllers
 
                 var result = postTask.Result;
                 if (result.IsSuccessStatusCode)
-                {
+                { 
                     return RedirectToAction("Index");
                 }
                 else

@@ -11,7 +11,7 @@ namespace Rkna_Project.Controllers
     public class AreaController : Controller
     {
 
-        // GET: Area
+        // GET: Area 
         [Authorize(Roles = "admin,manger")]
         public ActionResult Index()
         {
